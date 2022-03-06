@@ -15,6 +15,11 @@
       </button>
     </form>
   <% } %>
+  <% if (book.owner.equals(user?.profile._id)) { %>
+    <form action="/books/<%= book._id %>/edit" method="GET">
+      <button class="btn" type="submit">Edit this Book 🌮🚧</button>
+    </form>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>

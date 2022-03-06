@@ -7,6 +7,7 @@ const router = Router()
 // GET - localhost:3000/books
 router.get('/', booksCtrl.index)
 
+router.get('/:id/edit', isLoggedIn, booksCtrl.edit)
 
 router.post('/', isLoggedIn, booksCtrl.create)
 

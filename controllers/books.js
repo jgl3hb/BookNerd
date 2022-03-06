@@ -58,10 +58,25 @@ function flipRead(req, res) {
   })
 }
 
+function edit(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    res.render('books/edit', {
+      book,
+      title: "edit 🌮"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
+
 export {
   index,
   create,
   show,
-  flipRead
+  flipRead,
+  edit
 }
 

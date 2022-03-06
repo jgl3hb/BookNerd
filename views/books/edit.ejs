@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit the Book! 🌮</h1>
+  <form action="/books/<%= book._id %>?_method=PUT" method="POST">
+    <label>
+      Name: 
+      <input 
+        type="text"
+        name="name" 
+        value="<%= book.name %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Tasty?
+      <input 
+        type="checkbox" 
+        name="read" 
+				<%= taco.read ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit the 🌮</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
