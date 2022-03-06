@@ -10,7 +10,7 @@ function index(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/tacos")
+    res.redirect("/books")
   })
 }
 
