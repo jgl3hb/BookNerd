@@ -1,4 +1,4 @@
-import { redirect } from 'express/lib/response'
+// import { redirect } from 'express/lib/response'
 import { Book } from '../models/book.js'
 
 function index(req, res) {
@@ -20,11 +20,11 @@ function create(req, res) {
   req.body.read = !!req.body.read
   Book.create(req.body)
   .then(book => {
-    res.redirect('books')
+    res.redirect('/books')
   })
   .catch(err => {
     console.log(err)
-    res.redirect('books')
+    res.redirect('/books')
   })
 }
 
@@ -39,13 +39,29 @@ function show(req,res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('books')
+    res.redirect('/books')
+  })
+}
+
+function flipRead(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    book.read = !book.read
+    book.save()
+    .then(()=> {
+      res.redirect(`/books/${book._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
   })
 }
 
 export {
   index,
   create,
-  show
+  show,
+  flipRead
 }
 

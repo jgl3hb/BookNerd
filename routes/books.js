@@ -12,7 +12,7 @@ router.post('/', isLoggedIn, booksCtrl.create)
 
 router.get('/:id', booksCtrl.show)
 
-router.patch("/:id/flip-read", isLoggedIn, booksCtrl.read)
+router.patch('/:id/flip-read', isLoggedIn, booksCtrl.flipRead)
 
 export {
   router
