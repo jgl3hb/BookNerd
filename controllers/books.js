@@ -72,11 +72,51 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    if (book.owner.equals(req.user.profile._id)) {
+      req.body.read = !!req.body.read
+      book.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/books/${book._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/books`)
+  })
+}
+
+function deleteBook(req, res) {
+  Book.findById(req.params.id)
+  .then(book => {
+    if (book.owner.equals(req.user.profile._id)) {
+      book.delete()
+      .then(() => {
+        res.redirect('/books')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/books')
+  })
+}
+
 export {
   index,
   create,
   show,
   flipRead,
-  edit
+  edit, 
+  update,
+  deleteBook as delete,
+
 }
 

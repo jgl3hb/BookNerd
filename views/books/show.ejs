@@ -19,6 +19,9 @@
     <form action="/books/<%= book._id %>/edit" method="GET">
       <button class="btn" type="submit">Edit this Book 🌮🚧</button>
     </form>
+    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete this book 🌮💀</button>
+    </form>
   <% } %>
 </section>
 
