@@ -3,12 +3,30 @@
 
 <section>
   <h1>Books 🌮🌮🌮</h1>
-  <h2>All the Books!</h2>
-	<ul>
+<%# New Code Below %>
+<% if (user) { %>
+  <h2>Add a Book!</h2>
+  <form action="/books" method="POST">
+    <label>
+      Name: 
+      <input type="text" name="name" autocomplete="off">
+    </label>
+    <label>
+      Read?
+      <input type="checkbox" name="read">
+    </label>
+    <button type="submit">Add 🌮</button>
+  </form>
+<% } %>
+<h2>All the Books!</h2>
+<ul>
   <% books.forEach(book => { %>
-    <li>🌮 <%= book.name %> is <%= book.read ? 'read' : 'not read' %></li>
+    <li>
+      🌮 
+      <a href="/books/<%= book._id %>"><%= book.name %></a> 
+      is <%= book.read ? "read" : "not read"%></li>
   <% }) %>
-  </ul>
+</ul>
 </section>
 
 <%- include('../partials/footer') %>

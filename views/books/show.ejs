@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+	<p>From the bookshelf of <%= book.owner.name %>...</p>
+  <h1><%= book.name %> 🌮</h1>
+  <h2>This book is <%= book.read ? 'read! 😋' : 'not read! 😫' %></h2>
+  <% if (user) { %>
+    <form 
+      action="/books/<%= book._id %>/flip-read?_method=PATCH" 
+      method="POST"
+    >
+      <button class="btn" type="submit">
+        Add book <%= book.read ? 'not read 🌮🥺' : 'read 🌮🎉' %>
+      </button>
+    </form>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>
