@@ -4,6 +4,8 @@
 <section>
 	<p>From the bookshelf of <%= book.owner.name %>...</p>
   <h1><%= book.name %> </h1>
+  <h1><%= book.author %> </h1>
+  <h1><%= book.category %> </h1>
   <h2>This book is <%= book.read ? 'read!' : 'not read!' %></h2>
   <% if (user) { %>
     <form 

@@ -14,7 +14,7 @@ router.post('/', isLoggedIn, booksCtrl.create)
 router.put('/:id', isLoggedIn, booksCtrl.update)
 
 router.delete('/:id', isLoggedIn, booksCtrl.delete)
-
+////
 router.get('/:id', booksCtrl.show)
 
 router.patch('/:id/flip-read', isLoggedIn, booksCtrl.flipRead)

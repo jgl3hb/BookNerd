@@ -11,7 +11,6 @@ const bookSchema = new Schema({
   },
   read: Boolean,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  
 })
 
 const Book = mongoose.model('Book', bookSchema)

@@ -8,6 +8,7 @@ function index(req, res) {
       books,
       title: "🌮"
     })
+    console.log('books')
   })
   .catch(err => {
     console.log(err)
@@ -117,6 +118,5 @@ export {
   edit, 
   update,
   deleteBook as delete,
-
 }
 
