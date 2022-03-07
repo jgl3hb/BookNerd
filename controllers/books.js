@@ -1,4 +1,3 @@
-// import { redirect } from 'express/lib/response'
 import { Book } from '../models/book.js'
 
 function index(req, res) {
@@ -6,7 +5,7 @@ function index(req, res) {
   .then(books => {
     res.render('books/index', {
       books,
-      title: "🌮"
+      title: "🌮",
     })
     console.log('books')
   })
