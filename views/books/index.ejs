@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Books 🌮🌮🌮</h1>
+  <h1>Books</h1>
 <%# New Code Below %>
 <% if (user) { %>
   <h2>Add a Book!</h2>
@@ -33,18 +33,19 @@
       Read?
       <input type="checkbox" name="read">
     </label>
-    <button type="submit">Add 🌮</button>
+    <button type="submit">Add Book</button>
   </form>
 <% } %>
 <h2>Your Bookshelf!</h2>
 <ul>
   <% books.forEach(book => { %>
     <li>
-      🌮 
       <a href="/books/<%= book._id %>"><%= book.name %></a> 
       is <%= book.read ? "read" : "not read"%></li>
   <% }) %>
 </ul>
+
+
 </section>
 
 <%- include('../partials/footer') %>

@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Edit the Book! 🌮</h1>
+  <h1>Edit the Book!</h1>
   <form action="/books/<%= book._id %>?_method=PUT" method="POST">
     <label>
       Name: 
@@ -22,7 +22,7 @@
 				<%= book.read ? "checked" : "" %> 
       >
     </label>
-    <button type="submit">Edit the 🌮</button>
+    <button type="submit">Edit the Book</button>
   </form>
 </section>
 

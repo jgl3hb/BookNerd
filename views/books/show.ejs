@@ -3,24 +3,24 @@
 
 <section>
 	<p>From the bookshelf of <%= book.owner.name %>...</p>
-  <h1><%= book.name %> 🌮</h1>
-  <h2>This book is <%= book.read ? 'read! 😋' : 'not read! 😫' %></h2>
+  <h1><%= book.name %> </h1>
+  <h2>This book is <%= book.read ? 'read!' : 'not read!' %></h2>
   <% if (user) { %>
     <form 
       action="/books/<%= book._id %>/flip-read?_method=PATCH" 
       method="POST"
     >
       <button class="btn" type="submit">
-        Add book <%= book.read ? 'not read 🌮🥺' : 'read 🌮🎉' %>
+        Mark book <%= book.read ? 'not read' : 'read' %>
       </button>
     </form>
   <% } %>
   <% if (book.owner.equals(user?.profile._id)) { %>
     <form action="/books/<%= book._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit this Book 🌮🚧</button>
+      <button class="btn" type="submit">Edit Book</button>
     </form>
     <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete this book 🌮💀</button>
+      <button class="btn" type="submit">Delete book</button>
     </form>
   <% } %>
 </section>
