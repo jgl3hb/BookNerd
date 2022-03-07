@@ -8,9 +8,27 @@
   <h2>Add a Book!</h2>
   <form action="/books" method="POST">
     <label>
-      Name: 
+      Title: 
       <input type="text" name="name" autocomplete="off">
-    </label>
+    </label><br>
+    <label>
+      Author: 
+      <input type="text" name="name" autocomplete="off">
+    </label><br>
+    <label>Category:
+      <select name="category">
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Action">Action</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Suspense/Thriller">Suspense/Thriller</option>
+        <option value="Western">Western</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Philosophy/Psych">Philosophy/Psych</option>
+        <option value="Social Sciences">Social Sciences</option>
+        <option value="Technology">Technology</option>
+        <option value="History/Geography">History/Geography</option>
+      </select>
+    </label><br>
     <label>
       Read?
       <input type="checkbox" name="read">
@@ -18,7 +36,7 @@
     <button type="submit">Add 🌮</button>
   </form>
 <% } %>
-<h2>All the Books!</h2>
+<h2>Your Bookshelf!</h2>
 <ul>
   <% books.forEach(book => { %>
     <li>
