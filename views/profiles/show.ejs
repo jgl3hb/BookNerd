@@ -32,4 +32,30 @@
   <% } %>
 </main>
 
+<% if (profile.cats.length)  {%>
+  <h2>
+    <%= isSelf ? "You have" : `${profile.name} has` %> cats! Here they are!
+  </h2>
+  <% profile.cats.forEach(cat => { %>
+    <h3>
+      <%= getRandomCat() %> 
+      <%= cat.name %>
+      is a <%= cat.age %> year old <%= cat.breed %>
+      <% if (isSelf) { %> 
+        <form 
+          action="/profiles/cats/<%= cat._id %>?_method=DELETE" 
+          method="POST"
+          style="display: inline-block;"
+        >
+          <button type="submit">😸 Free <%= cat.name %></button>
+        </form>
+      <% } %> 
+    </h3>
+  <% }) %>
+
+<% function getRandomCat() { %>
+<% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %>
+<% return cats[Math.floor(Math.random() * cats.length)] %>
+<% } %> 
+
 <%- include('../partials/footer') %>

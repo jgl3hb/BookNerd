@@ -5,7 +5,7 @@ function index(req, res) {
   .then(books => {
     res.render('books/index', {
       books,
-      title: "🌮",
+      title: "BookNerd",
     })
     console.log('books')
   })
@@ -63,7 +63,7 @@ function edit(req, res) {
   .then(book => {
     res.render('books/edit', {
       book,
-      title: "edit 🌮"
+      title: "Edit Book"
     })
   })
   .catch(err => {

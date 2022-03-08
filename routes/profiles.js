@@ -9,6 +9,8 @@ router.get('/', isLoggedIn, profilesCtrl.index)
 // GET - localhost:3000/profiles/:id
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
+router.post('/:id/cats', isLoggedIn, profilesCtrl.createCat)
+
 export {
   router
 }
