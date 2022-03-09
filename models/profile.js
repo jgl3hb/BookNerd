@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const catSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   name: String,
   stars: Number,
   breview: String
@@ -11,7 +11,7 @@ const catSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  cats: [catSchema],
+  reviews: [reviewSchema],
 }, {
   timestamps: true
 })

@@ -15,7 +15,7 @@
   <% if (isSelf) { %>
     <h2>Add a Review!</h2>
     <form 
-      action="/profiles/<%= profile._id %>/cats"
+      action="/profiles/<%= profile._id %>/reviews"
       autocomplete="off"
       method="post">
       <label>
@@ -35,14 +35,14 @@
   <% } %>
 
 
-  <% if (profile.cats.length) { %>
+  <% if (profile.reviews.length) { %>
     <h2>Your Reviews</h2>
-    <% profile.cats.forEach(cat => { %>
+    <% profile.reviews.forEach(review => { %>
       <h3>
-        <%= cat.name %> is rated <%= cat.stars %> stars. <%= cat.breview %>
+        <%= review.name %> is rated <%= review.stars %> stars. <%= review.breview %>
         <% if (isSelf) { %>
           <form 
-            action="/profiles/<%= profile._id %>/cats/<%= cat.id %>?_method=DELETE"
+            action="/profiles/<%= profile._id %>/reviews/<%= review.id %>?_method=DELETE"
             method="post"
             style="display: inline-block;"
           >

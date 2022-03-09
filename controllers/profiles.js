@@ -33,10 +33,10 @@ function show(req, res) {
   })
 }
 
-function createCat(req, res) {
+function createReview(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.cats.push(req.body)
+    profile.reviews.push(req.body)
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -48,10 +48,10 @@ function createCat(req, res) {
   })
 }
 
-function deleteCat(req, res) {
+function deleteReview(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
-    profile.cats.remove({_id: req.params.catId})
+    profile.reviews.remove({_id: req.params.reviewId})
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
@@ -66,6 +66,6 @@ function deleteCat(req, res) {
 export {
   index,
   show,
-  createCat,
-  deleteCat
+  createReview,
+  deleteReview
 }
