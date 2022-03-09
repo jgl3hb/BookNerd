@@ -5,7 +5,7 @@ function index(req, res) {
   .then(profiles => {
     res.render('profiles/index', {
       profiles,
-      title: "🐱"
+      title,
     })
   })
   .catch(err => {
@@ -21,7 +21,7 @@ function show(req, res) {
     .then(self => {
       const isSelf = self._id.equals(profile._id)
       res.render("profiles/show", {
-        title: `🐱 ${profile.name}'s profile`,
+        title: `${profile.name}'s profile`,
         profile,
         isSelf
       })
