@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 
 const catSchema = new mongoose.Schema({
   name: String,
-  age: Number,
-  breed: String
+  stars: Number,
+  breview: String
 }, {
   timestamps: true,
 })

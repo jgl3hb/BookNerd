@@ -11,7 +11,7 @@
       >
     </div>
   <% } %>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</  h1>
   <% if (isSelf) { %>
     <h2>Add a Review!</h2>
     <form 
@@ -24,11 +24,11 @@
       </label>
       <label>
         Stars:
-        <input type="number" name="age">
+        <input type="number" name="stars">
       </label>
       <label>
         Review:
-        <input type="text" name="breed">
+        <input type="text" name="breview">
       </label>
       <button type="submt">Add Review</button>
     </form>
@@ -39,14 +39,14 @@
     <h2>Your Reviews</h2>
     <% profile.cats.forEach(cat => { %>
       <h3>
-        <%= cat.name %> is rated <%= cat.age %> stars. <%= cat.breed %>
+        <%= cat.name %> is rated <%= cat.stars %> stars. <%= cat.breview %>
         <% if (isSelf) { %>
           <form 
             action="/profiles/<%= profile._id %>/cats/<%= cat.id %>?_method=DELETE"
             method="post"
             style="display: inline-block;"
           >
-            <button type="submit">Delete Review </button>
+            <button type="submit">Delete Review</button>
           </form>
         <% } %>   
       </h3>
