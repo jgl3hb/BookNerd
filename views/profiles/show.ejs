@@ -5,57 +5,63 @@
   <% if (profile.avatar) { %>
     <div>
       <img 
-        class="profile-avatar"
         src="<%= profile.avatar %>" 
         alt="<%= profile.name %> avatar"
+        class="profile-avatar"
       >
     </div>
   <% } %>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
-  <% if (isSelf)  {%> 
-    <h2>Add a cat!</h2>
-    <form action="/profiles/<%= profile._id %>/cats" method="POST">
+  <% if (isSelf) { %>
+    <h2>Add a Review!</h2>
+    <form 
+      action="/profiles/<%= profile._id %>/cats"
+      autocomplete="off"
+      method="post">
       <label>
-        Name: 
-        <input type="text" name="name" autocomplete="off">
+        Book:
+        <input type="text" name="name" >
       </label>
       <label>
-        Age: 
-        <input type="number" name="age" autocomplete="off">
+        Stars:
+        <input type="number" name="age">
       </label>
       <label>
-        Breed: 
-        <input type="text" name="breed" autocomplete="off">
+        Review:
+        <input type="text" name="breed">
       </label>
-      <button type="submit">Add 🐱</button>
+      <button type="submt">Add Review</button>
     </form>
   <% } %>
+
+
+  <% if (profile.cats.length) { %>
+    <h2>Your Reviews</h2>
+    <% profile.cats.forEach(cat => { %>
+      <h3>
+        <%= getRandomCat() %>
+        <%= cat.name %> is a <%= cat.age %> year old <%= cat.breed %>
+        <% if (isSelf) { %>
+          <form 
+            action="/profiles/<%= profile._id %>/cats/<%= cat.id %>?_method=DELETE"
+            method="post"
+            style="display: inline-block;"
+          >
+            <button type="submit">😸 Free <%= cat.name %></button>
+          </form>
+        <% } %>   
+      </h3>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any Reviews!
+    </h2>
+  <% } %> 
 </main>
 
-<% if (profile.cats.length)  {%>
-  <h2>
-    <%= isSelf ? "You have" : `${profile.name} has` %> cats! Here they are!
-  </h2>
-  <% profile.cats.forEach(cat => { %>
-    <h3>
-      <%= getRandomCat() %> 
-      <%= cat.name %>
-      is a <%= cat.age %> year old <%= cat.breed %>
-      <% if (isSelf) { %> 
-        <form 
-          action="/profiles/cats/<%= cat._id %>?_method=DELETE" 
-          method="POST"
-          style="display: inline-block;"
-        >
-          <button type="submit">😸 Free <%= cat.name %></button>
-        </form>
-      <% } %> 
-    </h3>
-  <% }) %>
-
 <% function getRandomCat() { %>
-<% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %>
-<% return cats[Math.floor(Math.random() * cats.length)] %>
+  <% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %>
+  <% return cats[Math.floor(Math.random() * cats.length)] %>
 <% } %> 
 
 <%- include('../partials/footer') %>
