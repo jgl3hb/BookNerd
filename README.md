@@ -1,70 +1,15 @@
-# MEN Stack with OAuth Template
+BookNerd
 
-This is a MEN Stack template that includes OAuth.
+Visit my site:
 
-Use this to go build things! 🚀
 
-## To Use This Template
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+Technologies Used: 
+HTML, CSS, Javascript, MongoDB, Node.js & Express
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+<img src="https://imgur.com/a/nXwSjes"  width="720" height="480">
 
-Once you are in the project directory:
 
-```bash
-rm -rf .git
-```
+Wireframe
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
-
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
-
-Re-initialize a git repository:
-
-```bash
-git init
-```
-Use whatever method you'd like to get your project on GitHub. If you're looking for speed though use the GitHub CLI to create a new project repository on GitHub:
-
-```bash
-gh repo create <name-of-your-app-here> --public --source .
-```
-Check out the docs [here](https://cli.github.com/manual/gh_repo_create) if you want to learn more about this command. 
-
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=http://localhost:3000/auth/google/oauth2callback
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this README.md and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+<img src="https://imgur.com/FWut5aP"  width="720" height="480">
