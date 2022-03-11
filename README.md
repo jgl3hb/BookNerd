@@ -29,9 +29,9 @@ Technologies Used:
 
 Entity Relationship Document
 
-<img src="https://i.imgur.com/5Q33DwP.png"  width="720" height="680">
+<img src="https://i.imgur.com/5Q33DwP.png"  width="720" height="480">
 
 
 Wireframe
 
-<img src="https://i.imgur.com/K6S0cod.png"  width="720" height="680">
+<img src="https://i.imgur.com/K6S0cod.png"  width="720" height="480">
