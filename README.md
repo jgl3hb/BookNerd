@@ -29,7 +29,7 @@ Technologies Used:
 
 Entity Relationship Document
 
-<img src="https://imgur.com/a/nXwSjes"  width="720" height="480">
+<img src="https://imgur.com/a/OxGYC97"  width="720" height="480">
 
 
 Wireframe
