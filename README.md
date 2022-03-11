@@ -27,3 +27,6 @@ Entity Relationship Document
 Wireframe
 
 <img src="https://i.imgur.com/K6S0cod.png"  width="720" height="480">
+
+Ice Box:
+Sort method, by author, category, profile, stars
