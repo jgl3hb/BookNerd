@@ -7,7 +7,7 @@
   by <h1><%= book.author %> </h1>
   <h1><%= book.category %> </h1>
   <h2>This book is <%= book.read ? 'read!' : 'not read!' %></h2>
-  <% if (user) { %>
+  <% if (book.owner.equals(user?.profile._id)) { %>
     <form 
       action="/books/<%= book._id %>/flip-read?_method=PATCH" 
       method="POST"
