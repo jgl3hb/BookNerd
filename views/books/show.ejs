@@ -7,24 +7,7 @@
   by <h1><%= book.author %> </h1>
   <h1><%= book.category %> </h1>
   <h2>This book is <%= book.read ? 'read!' : 'not read!' %></h2>
-  <% if (user) { %>
-    <form 
-      action="/books/<%= book._id %>/flip-read?_method=PATCH" 
-      method="POST"
-    >
-      <button class="btn" type="submit">
-        Mark book <%= book.read ? 'not read' : 'read' %>
-      </button>
-    </form>
-  <% } %>
-  <% if (book.owner.equals(user?.profile._id)) { %>
-    <form action="/books/<%= book._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit Book</button>
-    </form>
-    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete book</button>
-    </form>
-  <% } %>
+
 </section>
 
 <%- include('../partials/footer') %>
