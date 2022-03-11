@@ -3,6 +3,8 @@ BookNerd
 Visit my site:
 https://booknerd-1-jl.herokuapp.com/
 
+<img src="https://i.imgur.com/eMgMHbB.jpg"  width="720" height="480">
+
 
 Technologies used:
 
@@ -31,3 +33,5 @@ Wireframe
 Ice Box:
 Sort method, by author, category, profile, stars
 Goodreads API
+
+About a computer virus that can jump into the real world if you can read code. Created the concepts of the Metaverse and Google Earth and popularized the term "avatar"
